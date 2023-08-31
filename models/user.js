@@ -3,7 +3,7 @@ const { ROLE } = require('../config/roles');
 
 const UserSchema = new Schema(
   {
-    name: {
+    userName: {
       type: String,
       required: true,
     },
@@ -15,10 +15,6 @@ const UserSchema = new Schema(
       type: String,
       default: "user",
       enum: [ROLE.user, ROLE.admin, ROLE.superadmin],
-    },
-    username: {
-      type: String,
-      required: true,
     },
     password: {
       type: String,

@@ -13,4 +13,7 @@ connect();
 // middlewares
 app.use(express.json());
 
+// routes
+app.use('/auth', require('./routes'));
+
 app.listen(PORT, () => log('role-based-auth application is running in dev mode on port', PORT));

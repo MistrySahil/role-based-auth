@@ -1,8 +1,8 @@
 // Modules
-const bcrypt = require("bcryptjs");
+const bcrypt = require('bcrypt');
 const {validationResult} = require('express-validator');
 
-const User = require("../../../models/User");
+const User = require('../../../models/user');
 
 const register = async (req, role, res) => {
   try {
@@ -12,7 +12,8 @@ const register = async (req, role, res) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
       // Return the validation errors
-      return res.status(403).json({
+      console.log(errors.array()[0].msg);
+      return res.status(403).json({ 
         message: errors.array()[0].msg,
         success: false,
       });
